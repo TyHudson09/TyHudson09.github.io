@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style type="text/css">
+.inline {
+  background-color: #f7f7f7;
+  border:solid 1px #B0B0B0;
+}
+.error {
+	font-weight: bold;
+	color: #FF0000;
+}
+.warning {
+	font-weight: bold;
+}
+.message {
+	font-style: italic;
+}
+.source, .output, .warning, .error, .message {
+	padding: 0 1em;
+  border:solid 1px #F7F7F7;
+}
+.source {
+  background-color: #f5f5f5;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+.hl.num {
+  color: #AF0F91;
+}
+.hl.sng {
+  color: #317ECC;
+}
+.hl.com {
+  color: #AD95AF;
+  font-style: italic;
+}
+.hl.opt {
+  color: #000000;
+}
+.hl.def {
+  color: #585858;
+}
+.hl.kwa {
+  color: #295F94;
+  font-weight: bold;
+}
+.hl.kwb {
+  color: #B05A65;
+}
+.hl.kwc {
+  color: #55aa55;
+}
+.hl.kwd {
+  color: #BC5A65;
+  font-weight: bold;
+}
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jane Doe - About Me</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Turtle Project</h1>
+    </header>
+
+    <!-- Project Description -->
+    <section>
+        <h2>About the Project</h2>
+        <p>This project is about creating a graphical scene using Python’s Turtle graphics
+module.I used the provided building block functions (draw_rectangle, draw_square,
+draw_triangle, draw_circle) to create functions that draw composite shapes such as a house, clouds, sidewalks, etc. Position functions such as base_x, base_y, provide coordinates to position the building fuctions to create the image
+</p>
+    </section>
+
+    <!-- Code highlights -->
+    <section>
+        <h2>Sample Code</h2>
+        <p>
+            This function creates a cloud shape using multiple overlapping circles. The parameters allow for flexible positioning and scaling:
+            <br><br>
+            • <strong>t</strong>: The turtle graphics object for drawing<br>
+            • <strong>base_x, base_y</strong>: Coordinates moved from base for the cloud<br>
+            • <strong>radius</strong>: Radius of the cloud<br>
+            • <strong>Color</strong>: Color of the cloud<br>
+        </p>
+        
+        <div class="code-container">
+<code>
+<span class="keyword">def</span> <span class="function">draw_cloud</span>(<span class="parameter">t</span>, <span class="parameter">base_x</span>, <span class="parameter">base_y</span>, <span class="parameter">radius</span>=<span class="string">25</span>, <span class="parameter">color</span>=<span class="string">"white"</span>):<br>
+    <span class="comment">"""Draw a cloud using multiple circles at specified base position with customizable radius and color"""</span><br>
+    <span class="comment"># Define relative positions for cloud circles to form a cloud shape</span><br>
+    <span class="parameter">positions</span> = [<br>
+        (<span class="parameter">base_x</span>, <span class="parameter">base_y</span>),<span class="comment">           # Center circle</span><br>
+        (<span class="parameter">base_x</span> - <span class="string">25</span>, <span class="parameter">base_y</span> + <span class="string">5</span>),<span class="comment">  # Left circle</span><br>
+        (<span class="parameter">base_x</span> + <span class="string">25</span>, <span class="parameter">base_y</span> + <span class="string">10</span>),<span class="comment"> # Right circle</span><br>
+        (<span class="parameter">base_x</span> + <span class="string">50</span>, <span class="parameter">base_y</span>)<span class="comment">       # Far right circle</span><br>
+    ]<br>
+    <span class="keyword">for</span> <span class="parameter">x</span>, <span class="parameter">y</span> <span class="keyword">in</span> <span class="parameter">positions</span>:<span class="comment">  # Draw a circle at each position</span><br>
+        <span class="function">jump_to</span>(<span class="parameter">t</span>, <span class="parameter">x</span>, <span class="parameter">y</span>)<br>
+        <span class="parameter">t</span>.<span class="function">pencolor</span>(<span class="string">"white"</span>)<br>
+        <span class="function">draw_circle</span>(<span class="parameter">t</span>, <span class="parameter">radius</span>, <span class="parameter">fill_color</span>=<span class="parameter">color</span>)<br>
+</code>
+</div>
+
+    </section>
+        
+    <!-- the scene -->
+    <section>
+        <h2>Final Scene</h2>
+        <p>Here's the completed turtle graphics scene featuring a house with a dog house, fluffy clouds, a bright sun, and a side walk:</p>
+        
+        <div class="scene-container">
+            <img src="TurtleIMG.png" alt="Turtle Graphics Scene - A house with brown roof, clouds, sun, and Dog House on a blue sky background" class="scene-image">
+        </div>
+        
+        <p class="scene-description">
+            The scene combines multiple composite shapes created from basic turtle graphics functions. The house's uses rectangles and triangles, The clouds demonstrate the layering technique shown in the code sample above, and the overall composition creates a fun and creative scene.
+        </p>
+    </section>
+
+    <footer>
+        <p>Created by Tyler Hudson, CS110</p>
+    </footer>
+</body>
+</html>
